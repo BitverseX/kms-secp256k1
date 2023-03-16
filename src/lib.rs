@@ -16,18 +16,19 @@
 #[macro_use]
 extern crate serde_derive;
 extern crate serde;
+extern crate  serde_json;
 
 extern crate centipede;
 extern crate curv;
 extern crate multi_party_ecdsa;
-extern crate multi_party_schnorr;
+
 extern crate paillier;
 extern crate zk_paillier;
 
 pub mod chain_code;
 pub mod ecdsa;
 pub mod rotation;
-pub mod schnorr;
+
 pub mod traits;
 pub use traits::*;
 pub mod poc;

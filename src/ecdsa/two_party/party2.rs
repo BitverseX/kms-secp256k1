@@ -12,7 +12,7 @@
 
 use curv::BigInt;
 use curv::elliptic::curves::secp256_k1::{FE, GE};
-use multi_party_ecdsa::protocols::two_party_ecdsa::lindell_2017::party_one::EphKeyGenFirstMsg as Party1EphKeyGenFirstMsg;
+use multi_party_ecdsa::protocols::two_party_ecdsa::lindell_2017::party_one::{EphKeyGenFirstMsg as Party1EphKeyGenFirstMsg, KeyGenFirstMsg};
 use multi_party_ecdsa::protocols::two_party_ecdsa::lindell_2017::party_one::KeyGenFirstMsg as Party1KeyGenFirstMsg;
 
 use super::party1::{KeyGenParty1Message2, RotationParty1Message1};
@@ -156,7 +156,7 @@ impl MasterKey2 {
     }
 
     pub fn key_gen_second_message(
-        party_one_first_message: &Party1KeyGenFirstMsg,
+        party_one_first_message: KeyGenFirstMsg,
         party_one_second_message: &KeyGenParty1Message2,
         party_one_second_message_salt: &[u8]
     ) -> Result<(Party2SecondMessage, party_two::PaillierPublic), ()> {

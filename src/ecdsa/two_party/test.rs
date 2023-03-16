@@ -414,7 +414,7 @@ mod tests {
             );
 
         let key_gen_second_message = MasterKey2::key_gen_second_message(
-            &kg_party_one_first_message,
+            kg_party_one_first_message,
             &kg_party_one_second_message,
             SALT_STRING
         );
